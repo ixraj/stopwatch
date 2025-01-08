@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --color-background: #f4f4f4;
+    --color-text-primary: #2c3e50;
+    --color-text-secondary: #495057;
+    --color-accent-primary: #007bff;
+    --color-accent-secondary: #2ecc71;
+    --color-accent-tertiary: #673ab7;
+    --color-danger: #e74c3c;
+    --color-white: #ffffff;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition-smooth: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    padding: 1rem;
+    line-height: 1.6;
+    overscroll-behavior: contain;
+    touch-action: manipulation;
+}
+
+.stopwatch-container {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 400px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.time-display {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    font-variant-numeric: tabular-nums;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    flex: 1 1 calc(33.333% - 0.75rem);
+    min-width: 80px;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    color: var(--color-white);
+    font-size: 0.9rem;
+    touch-action: manipulation;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: none;
+}
+
+.btn-start {
+    background-color: var(--color-accent-secondary);
+}
+
+.btn-stop {
+    background-color: var(--color-danger);
+}
+
+.btn-reset {
+    background-color: var(--color-accent-primary);
+}
+
+.btn-lap {
+    background-color: var(--color-accent-tertiary);
+}
+
+.lap-times {
+    font-family: "Poppins", sans-serif;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.lap-time-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    align-items: center;
+}
+
+.lap-time-item:last-child {
+    border-bottom: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d6d6d6;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9c9c9c;
+}
+
+@media (max-width: 480px) {
+    .stopwatch-container {
+        padding: 1rem;
+    }
+
+    .time-display {
+        font-size: 2rem;
+        padding: 0.75rem;
+    }
+
+    .control-buttons {
+        gap: 0.5rem;
+    }
+}
